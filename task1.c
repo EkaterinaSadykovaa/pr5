@@ -27,7 +27,7 @@ void handle_result_signal(int sig) {
 
 void first_player(pid_t second_player_pid, int max_number, int round_number) {
     srand(time(NULL));
-    int secret_number = 1 + rand() % max_number; числа
+    int secret_number = 1 + rand() % max_number;
     printf("Раунд %d \n Загаданное число: %d\n", round_number, secret_number);
     fflush(stdout);
 
@@ -49,7 +49,7 @@ void first_player(pid_t second_player_pid, int max_number, int round_number) {
         signal_received = 0;
 
         siginfo_t info;
-        sigwaitinfo(&block_mask, &info); игрока
+        sigwaitinfo(&block_mask, &info);
 
         int guessed_number = info.si_value.sival_int;
         attempts_count++;
